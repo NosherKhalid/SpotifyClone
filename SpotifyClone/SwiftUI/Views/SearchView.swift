@@ -1,6 +1,6 @@
 //
 //  SecondTabView.swift
-//  CoordinatorPattern
+//  SpotifyClone
 //
 //  Created by Nosher Khalid on 7/1/25.
 //

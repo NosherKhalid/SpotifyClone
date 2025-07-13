@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		1FBCDA562E12EAD700A8EB7E /* CoordinatorPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FBCDA562E12EAD700A8EB7E /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1FBCDA682E12EAD800A8EB7E /* Exceptions for "CoordinatorPattern" folder in "CoordinatorPattern" target */ = {
+		1FBCDA682E12EAD800A8EB7E /* Exceptions for "SpotifyClone" folder in "SpotifyClone" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 1FBCDA552E12EAD700A8EB7E /* CoordinatorPattern */;
+			target = 1FBCDA552E12EAD700A8EB7E /* SpotifyClone */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1FBCDA582E12EAD700A8EB7E /* CoordinatorPattern */ = {
+		1FBCDA582E12EAD700A8EB7E /* SpotifyClone */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1FBCDA682E12EAD800A8EB7E /* Exceptions for "CoordinatorPattern" folder in "CoordinatorPattern" target */,
+				1FBCDA682E12EAD800A8EB7E /* Exceptions for "SpotifyClone" folder in "SpotifyClone" target */,
 			);
-			path = CoordinatorPattern;
+			path = SpotifyClone;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		1FBCDA4D2E12EAD700A8EB7E = {
 			isa = PBXGroup;
 			children = (
-				1FBCDA582E12EAD700A8EB7E /* CoordinatorPattern */,
+				1FBCDA582E12EAD700A8EB7E /* SpotifyClone */,
 				1FBCDA572E12EAD700A8EB7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		1FBCDA572E12EAD700A8EB7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FBCDA562E12EAD700A8EB7E /* CoordinatorPattern.app */,
+				1FBCDA562E12EAD700A8EB7E /* SpotifyClone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FBCDA552E12EAD700A8EB7E /* CoordinatorPattern */ = {
+		1FBCDA552E12EAD700A8EB7E /* SpotifyClone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FBCDA692E12EAD800A8EB7E /* Build configuration list for PBXNativeTarget "CoordinatorPattern" */;
+			buildConfigurationList = 1FBCDA692E12EAD800A8EB7E /* Build configuration list for PBXNativeTarget "SpotifyClone" */;
 			buildPhases = (
 				1FBCDA522E12EAD700A8EB7E /* Sources */,
 				1FBCDA532E12EAD700A8EB7E /* Frameworks */,
@@ -74,13 +74,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				1FBCDA582E12EAD700A8EB7E /* CoordinatorPattern */,
+				1FBCDA582E12EAD700A8EB7E /* SpotifyClone */,
 			);
-			name = CoordinatorPattern;
+			name = SpotifyClone;
 			packageProductDependencies = (
 			);
 			productName = CoordinatorPattern;
-			productReference = 1FBCDA562E12EAD700A8EB7E /* CoordinatorPattern.app */;
+			productReference = 1FBCDA562E12EAD700A8EB7E /* SpotifyClone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1FBCDA512E12EAD700A8EB7E /* Build configuration list for PBXProject "CoordinatorPattern" */;
+			buildConfigurationList = 1FBCDA512E12EAD700A8EB7E /* Build configuration list for PBXProject "SpotifyClone" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FBCDA552E12EAD700A8EB7E /* CoordinatorPattern */,
+				1FBCDA552E12EAD700A8EB7E /* SpotifyClone */,
 			);
 		};
 /* End PBXProject section */
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6S64S4J8U7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoordinatorPattern/Info.plist;
+				INFOPLIST_FILE = SpotifyClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -157,7 +157,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NosherKhalid.CoordinatorPattern;
+				PRODUCT_BUNDLE_IDENTIFIER = NosherKhalid.SpotifyClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -174,7 +174,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6S64S4J8U7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoordinatorPattern/Info.plist;
+				INFOPLIST_FILE = SpotifyClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -184,7 +184,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = NosherKhalid.CoordinatorPattern;
+				PRODUCT_BUNDLE_IDENTIFIER = NosherKhalid.SpotifyClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -314,7 +314,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FBCDA512E12EAD700A8EB7E /* Build configuration list for PBXProject "CoordinatorPattern" */ = {
+		1FBCDA512E12EAD700A8EB7E /* Build configuration list for PBXProject "SpotifyClone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FBCDA6C2E12EAD800A8EB7E /* Debug */,
@@ -323,7 +323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FBCDA692E12EAD800A8EB7E /* Build configuration list for PBXNativeTarget "CoordinatorPattern" */ = {
+		1FBCDA692E12EAD800A8EB7E /* Build configuration list for PBXNativeTarget "SpotifyClone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FBCDA6A2E12EAD800A8EB7E /* Debug */,

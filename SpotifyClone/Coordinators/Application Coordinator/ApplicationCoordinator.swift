@@ -1,6 +1,6 @@
 //
 //  ApplicationCoordinator.swift
-//  CoordinatorPattern
+//  SpotifyClone
 //
 //  Created by Nosher Khalid on 6/30/25.
 //
