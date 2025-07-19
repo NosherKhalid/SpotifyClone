@@ -16,11 +16,11 @@ class ApplicationCoordinator: Coordinator {
     }
     
     func start() {
-        let mainCoordinator = MainCoordinator()
-        self.childCoordinators.append(mainCoordinator)
+        let signupCoordinator = SignupCoordinator()
+        self.childCoordinators.append(signupCoordinator)
         
-        mainCoordinator.start()
-        window.rootViewController = mainCoordinator.rootViewController
+        signupCoordinator.start()
+        window.rootViewController = signupCoordinator.rootViewController
     }
 }
 

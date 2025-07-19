@@ -30,12 +30,15 @@ class MainCoordinator: Coordinator {
         
         self.childCoordinators.append(hc)
         
+        // Home
         let homeVC = hc.homeViewController
         setTab(vc: homeVC,
                title: "Home",
                defaultImage: "home",
                selectedImage: "home_filled")
         
+        
+        // Search
         let sc = SearchCoordinator()
         sc.start()
         
@@ -43,7 +46,18 @@ class MainCoordinator: Coordinator {
         let searchVC = sc.searchViewController
         setTab(vc: searchVC, title: "Search", defaultImage: "search", selectedImage: "search_white")
         
-        self.rootViewController.viewControllers = [homeVC, searchVC]
+        
+        // Library
+        let lc = LibraryCoordinator()
+        lc.start()
+        
+        let libraryVC = lc.libraryViewController
+        setTab(vc: libraryVC,
+               title: "Library",
+               defaultImage: "music.note.list",
+               selectedImage: "music.note.list")
+        
+        self.rootViewController.viewControllers = [homeVC, searchVC, libraryVC]
         
     }
     

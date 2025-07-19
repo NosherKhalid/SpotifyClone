@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1F55BA792E240768008FEBD8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F55BA782E240768008FEBD8 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1FBCDA562E12EAD700A8EB7E /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F55BA792E240768008FEBD8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = SpotifyClone;
 			packageProductDependencies = (
+				1F55BA782E240768008FEBD8 /* SnapKit */,
 			);
 			productName = CoordinatorPattern;
 			productReference = 1FBCDA562E12EAD700A8EB7E /* SpotifyClone.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 1FBCDA4D2E12EAD700A8EB7E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1F55BA772E240768008FEBD8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1FBCDA572E12EAD700A8EB7E /* Products */;
 			projectDirPath = "";
@@ -333,6 +342,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F55BA772E240768008FEBD8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F55BA782E240768008FEBD8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F55BA772E240768008FEBD8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FBCDA4E2E12EAD700A8EB7E /* Project object */;
 }
