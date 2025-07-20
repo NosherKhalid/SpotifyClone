@@ -16,11 +16,20 @@ class ApplicationCoordinator: Coordinator {
     }
     
     func start() {
+        
         let signupCoordinator = SignupCoordinator()
         self.childCoordinators.append(signupCoordinator)
         
+        signupCoordinator.onLoginSuccess = { [weak self] in
+            debugPrint("DEBUG: Load login screen")
+        }
+        
         signupCoordinator.start()
         window.rootViewController = signupCoordinator.rootViewController
+    }
+    
+    deinit {
+        print("🗑️ ApplicationCoordinator deinit")
     }
 }
 

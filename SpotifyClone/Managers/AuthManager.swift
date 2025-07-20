@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CommonCrypto
+import Combine
 
 // MARK: - AuthManager.swift
 class AuthManager {
@@ -19,9 +20,21 @@ class AuthManager {
     private let tokenURL = "https://accounts.spotify.com/api/token"
 
     private var codeVerifier: String?
-    private(set) var accessToken: String?
+    private(set) var accessToken: String? {
+        didSet {
+            isLoggedIn.send(accessToken != nil)
+        }
+    }
 
-    private init() {}
+    var isLoggedIn = CurrentValueSubject<Bool, Never>(false)
+
+    private init() {
+        print("🧨 AuthManager INIT called")
+    }
+    
+    func simulateLoginForTesting() {
+           accessToken = "mock_token"
+       }
 
     func startAuthorization() {
         codeVerifier = generateCodeVerifier()

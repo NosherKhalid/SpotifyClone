@@ -25,7 +25,8 @@ struct SignUpView: View {
                 .foregroundStyle(.white)
                 
                 Button("Sign in with Spotify"){
-                    AuthManager.shared.startAuthorization()
+//                    AuthManager.shared.startAuthorization()
+                         AuthManager.shared.simulateLoginForTesting()
                 }
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .foregroundStyle(.black)
