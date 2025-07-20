@@ -9,21 +9,50 @@ import Foundation
 import UIKit
 import CommonCrypto
 import Combine
+import KeychainSwift
 
 // MARK: - AuthManager.swift
 class AuthManager {
     static let shared = AuthManager()
+    
+    let keychain = KeychainSwift()
 
     private let clientID = "af0cf567fc9549c69180d3dd1a39098d"
     private let redirectURI = "spotifyclone://callback"
     private let scopes = "user-read-email user-read-private"
     private let tokenURL = "https://accounts.spotify.com/api/token"
+    
+    private var accessTokenKey = "spotify_access_token"
+    private var refreshTokenKey = "spotify_refresh_token"
 
     private var codeVerifier: String?
     private(set) var accessToken: String? {
-        didSet {
-            isLoggedIn.send(accessToken != nil)
+        get {
+            keychain.get(accessTokenKey)
         }
+        
+        set {
+            if let token = newValue {
+                keychain.set(token, forKey: accessTokenKey)
+            }
+        }
+    }
+    
+    private(set) var refreshToken: String? {
+        get {
+            keychain.get(refreshTokenKey)
+        }
+        
+        set {
+            if let token = newValue {
+                keychain.set(token, forKey: refreshTokenKey)
+            }
+        }
+    }
+    
+    private func clearTokens() {
+        keychain.delete(accessTokenKey)
+        keychain.delete(refreshTokenKey)
     }
 
     var isLoggedIn = CurrentValueSubject<Bool, Never>(false)
@@ -91,10 +120,66 @@ class AuthManager {
                 if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
                     print("✅ Token Response: \(json)")
                     self.accessToken = json["access_token"] as? String
+                    self.refreshToken = json["refresh_token"] as? String
+                    self.isLoggedIn.send(true)
                 }
             } catch {
                 print("❌ Failed to decode token response: \(error)")
             }
+        }.resume()
+    }
+    
+    func refreshAccessTokenIfNeeded(completion: @escaping (Bool) -> Void) {
+        guard let refreshToken = self.refreshToken,
+              let url = URL(string: tokenURL) else {
+            completion(false)
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        let params = [
+            "client_id": clientID,
+            "grant_type": "refresh_token",
+            "refresh_token": refreshToken
+        ]
+
+        let body = params.map { "\($0)=\($1)" }.joined(separator: "&")
+        request.httpBody = body.data(using: .utf8)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                   print("❌ Refresh error: \(error)")
+               }
+
+               if let response = response as? HTTPURLResponse {
+                   print("📡 Status Code: \(response.statusCode)")
+               }
+
+               if let data = data {
+                   print("📦 Raw Response: \(String(data: data, encoding: .utf8) ?? "nil")")
+                   do {
+                       if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                           if let newToken = json["access_token"] as? String {
+                               self.accessToken = newToken
+                               self.isLoggedIn.send(true)
+                               completion(true)
+                           } else {
+                               print("⚠️ Failed to get new access token from refresh")
+                               completion(false)
+                           }
+                       }
+                   } catch {
+                       print("❌ Error parsing refresh token response:", error)
+                       completion(false)
+                   }
+                   
+               } else {
+                   print("❌ No data received")
+                   completion(false)
+               }
         }.resume()
     }
 

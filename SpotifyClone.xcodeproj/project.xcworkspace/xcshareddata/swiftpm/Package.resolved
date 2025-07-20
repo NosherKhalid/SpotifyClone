@@ -1,6 +1,15 @@
 {
-  "originHash" : "dd27728c8848101841bd8d45243ef43144e233aa3767c82656934b73447347b8",
+  "originHash" : "fdf5de3a1443e089f44eff4f4125e65161d3cfb9b6641191ec71498046cf5ae3",
   "pins" : [
+    {
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift",
+      "state" : {
+        "revision" : "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608",
+        "version" : "24.0.0"
+      }
+    },
     {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
