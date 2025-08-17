@@ -20,17 +20,22 @@ class ApplicationCoordinator: Coordinator {
         AuthManager.shared.refreshAccessTokenIfNeeded { success in
             DispatchQueue.main.async {
                 if success {
-                    let homeCoordinator = HomeCoordinator()
-                    self.childCoordinators.append(homeCoordinator)
-                    homeCoordinator.start()
-                    self.window.rootViewController = homeCoordinator.rootViewController
+                    let mainCoordinator = MainCoordinator()
+                    self.childCoordinators.append(mainCoordinator)
+                    mainCoordinator.start()
+                    self.window.rootViewController = mainCoordinator.rootViewController
                 } else {
                     let signupCoordinator = SignupCoordinator()
                     self.childCoordinators.append(signupCoordinator)
                     
                     signupCoordinator.onLoginSuccess = { [weak self] in
-                        guard self != nil else { return }
-                        debugPrint("DEBUG: Show Home Screen")
+                        guard let self else { return }
+                        self.childCoordinators.removeAll()
+                        
+                        let mainCoordinator = MainCoordinator()
+                        self.childCoordinators.append(mainCoordinator)
+                        mainCoordinator.start()
+                        self.window.rootViewController = mainCoordinator.rootViewController
                     }
                     
                     signupCoordinator.start()

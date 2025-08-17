@@ -12,7 +12,7 @@ class HomeCoordinator: Coordinator {
     var rootViewController: UINavigationController
     
     lazy var homeViewController: UIViewController = {
-        let controller = UIHostingController(rootView: HomeView())
+        let controller = UIHostingController(rootView: HomeView(viewModel: HomeViewModel()))
         return controller
     }()
     
