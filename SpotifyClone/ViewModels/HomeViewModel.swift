@@ -27,7 +27,7 @@ class HomeViewModel: ObservableObject {
                     
                 }
             } receiveValue: { albums in
-                debugPrint("DEBUG: Received new releases: \(albums)")
+                AppLogger.shared.prettyPrint(albums)
             }
             .store(in: &cancellables)
 
