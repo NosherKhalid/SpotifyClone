@@ -12,7 +12,9 @@ class HomeCoordinator: Coordinator {
     var rootViewController: UINavigationController
     
     lazy var homeViewController: UIViewController = {
-        let controller = UIHostingController(rootView: HomeView(viewModel: HomeViewModel()))
+        let client = SpotifyAPIClient(tokenProvider: { AuthManager.shared.accessToken ?? "" })
+        let repository = SpotifyRepository(apiClient: client)
+        let controller = UIHostingController(rootView: HomeView(viewModel: HomeViewModel(repository: repository)))
         return controller
     }()
     

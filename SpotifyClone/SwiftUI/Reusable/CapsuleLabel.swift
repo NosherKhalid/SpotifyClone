@@ -17,7 +17,7 @@ struct CapsuleLabel: View {
             .fontWeight(.regular)
             .padding(.horizontal, 12)
             .padding(.vertical, 3.5)
-            .foregroundColor(.white)
+            .foregroundColor(isSelected ? .black : .white)
             .background(isSelected ? .green : .gray)
             .clipShape(Capsule())
     }
